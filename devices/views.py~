@@ -38,7 +38,7 @@ class EIRCDeviceList(APIView):
       logger.info("Success.")
       return Response(serializer.data)
     else:
-      return Response(status=HTTP_401_UNAUTHORIZED)
+      return Response(status=status.HTTP_401_UNAUTHORIZED)
   def post(self, request):
     logger.info("Trying to serialize eirc device object..")
     serializer = EIRCDeviceSerializer(data=request.data)

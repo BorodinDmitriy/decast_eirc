@@ -29,7 +29,7 @@ class EIRCDeviceByAccount(APIView):
 class EIRCDeviceList(APIView):
   
   def get(self, request):
-    if request.user.is_authenticated():
+    #if request.user.is_authenticated():
       logger.info("Getting list of eirc devices..")
       eirc_devices = EIRCDevice.objects.all()
       logger.info("Trying to serialize list of eirc devices..")
@@ -37,8 +37,8 @@ class EIRCDeviceList(APIView):
       #if serializer.is_valid():
       logger.info("Success.")
       return Response(serializer.data)
-    else:
-      return Response(status=status.HTTP_401_UNAUTHORIZED)
+    #else:
+    # return Response(status=status.HTTP_401_UNAUTHORIZED)
   def post(self, request):
     logger.info("Trying to serialize eirc device object..")
     serializer = EIRCDeviceSerializer(data=request.data)
