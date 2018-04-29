@@ -34,9 +34,9 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.AllowAny',
     ),
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
-    ),
+    #'DEFAULT_AUTHENTICATION_CLASSES': (
+    #    'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+    #),
 }
     
 JWT_AUTH = {
